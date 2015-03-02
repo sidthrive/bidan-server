@@ -8,7 +8,7 @@ import org.ektorp.support.TypeDiscriminator;
 import org.motechproject.model.MotechBaseDataObject;
 
 @TypeDiscriminator("doc.type === 'kartu_ibu'")
-public class Bidan extends MotechBaseDataObject {
+public class KartuIbu extends MotechBaseDataObject {
 	@JsonProperty
 	private String caseId;
 	@JsonProperty
@@ -47,12 +47,12 @@ public class Bidan extends MotechBaseDataObject {
 		this.anmIdentifier = anmIdentifier;
 	}
 
-	private Bidan()
+	private KartuIbu()
 	{
 		
 	}
 
-	public Bidan(String caseId) {
+	public KartuIbu(String caseId) {
 		this.caseId = caseId;
 	}
 
@@ -169,45 +169,45 @@ public class Bidan extends MotechBaseDataObject {
 		return ToStringBuilder.reflectionToString(this);
 	}
 
-	public Bidan withName(String wifeName) {
+	public KartuIbu withName(String wifeName) {
 		setwifeName(wifeName);
 		return this;
 	}
 
-	public Bidan withDob(String womanDOB) {
+	public KartuIbu withDob(String womanDOB) {
 		setwomanDOB(womanDOB);
 		return this;
 	}
 
-	public Bidan withphoneNumber(String phoneNumber) {
+	public KartuIbu withphoneNumber(String phoneNumber) {
 		setphoneNumber(phoneNumber);
 		return this;
 	}
 
-	public Bidan withsubCenter(String subCenter) {
+	public KartuIbu withsubCenter(String subCenter) {
 		setsubCenter(subCenter);
 		return this;
 	}
 
-	public Bidan withvillage(String village) {
+	public KartuIbu withvillage(String village) {
 		setvillage(village);
 		return this;
 	}
 
 	
-	public Bidan withid(String id) {
+	public KartuIbu withid(String id) {
 		setId(id);
 		return this;
 	}
 
-	public Bidan withLocation(String Province, String Kabupaten, String puskesmas) {
+	public KartuIbu withLocation(String Province, String Kabupaten, String puskesmas) {
         this.Province = Province;
         this.Kabupaten = Kabupaten;
         this.puskesmas = puskesmas;
         return this;
     }
 	
-	public Bidan withANMIdentifier(String anmIdentifier) {
+	public KartuIbu withANMIdentifier(String anmIdentifier) {
         this.anmIdentifier = anmIdentifier;
         return this;
     }
