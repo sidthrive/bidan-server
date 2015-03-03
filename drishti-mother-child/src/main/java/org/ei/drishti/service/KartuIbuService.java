@@ -17,7 +17,7 @@ import org.ei.drishti.form.domain.FormSubmission;
 import org.ei.drishti.repository.AllEligibleCouples;
 import org.ei.drishti.repository.AllKartuIbu;
 import org.ei.drishti.service.formSubmission.handler.ReportFieldsDefinition;
-import org.ei.drishti.service.scheduling.BidanSchedulesService;
+import org.ei.drishti.service.scheduling.KartuIbuSchedulesService;
 import org.ei.drishti.util.SafeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class KartuIbuService {
 	private static Logger logger = LoggerFactory.getLogger(ActionService.class.toString());
 	 private AllKartuIbu allKartuIbu;
 	 private ReportFieldsDefinition reportFieldsDefinition;
-	 private BidanSchedulesService schedulingService;
+	 private KartuIbuSchedulesService schedulingService;
 
 	 public void registerKartuIbu(FormSubmission submission) {
 	     /*   KartuIbu kartu_ibu = allKartuIbu.findByCaseId(submission.entityId());
