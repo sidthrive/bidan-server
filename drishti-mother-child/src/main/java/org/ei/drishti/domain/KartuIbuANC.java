@@ -14,7 +14,7 @@ public class KartuIbuANC extends MotechBaseDataObject {
 	@JsonProperty
 	private String id;
 	@JsonProperty
-	private String ANC_date;
+	private String referenceDate;
 	@JsonProperty
 	private String Jamkesmas;
 	@JsonProperty
@@ -62,11 +62,11 @@ public class KartuIbuANC extends MotechBaseDataObject {
 		this.id = id;
 	}
 
-	public String getANC_date() {
-		return ANC_date;
+	public String getreferenceDate() {
+		return referenceDate;
 	}
-	public void setANC_date(String ANC_date) {
-		this.ANC_date = ANC_date;
+	public void setreferenceDate(String referenceDate) {
+		this.referenceDate = referenceDate;
 	}
 
 	public String getPJamkesmas() {
@@ -167,8 +167,8 @@ public class KartuIbuANC extends MotechBaseDataObject {
 		return this;
 	}
 
-	public KartuIbuANC withANC_date(String ANC_date) {
-		setANC_date(ANC_date);
+	public KartuIbuANC withreferenceDate(String referenceDate) {
+		setreferenceDate(referenceDate);
 		return this;
 	}
 
@@ -194,7 +194,7 @@ public class KartuIbuANC extends MotechBaseDataObject {
 	}
 
 	public KartuIbuANC withBB(String BB) {
-		setId(BB);
+		setBB(BB);
         return this;
     }
 }
