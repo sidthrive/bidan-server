@@ -1,0 +1,313 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "kartu_ibu",
+        "default_bind_path": "/model/instance/rencana_persalinan/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "motherId",
+                "source": "kartu_ibu.ibu.id"
+            },
+            {
+                "name": "RencanaPenolongPersalinan",
+                "bind": "/model/instance/rencana_persalinan/B01036",
+				"source": "kartu_ibu.ibu.RencanaPenolongPersalinan"
+            },
+            {
+                "name": "TempatRencanaPersalinan",
+                "bind": "/model/instance/rencana_persalinan/B01037",
+				"source": "kartu_ibu.ibu.TempatRencanaPersalinan"
+            },
+            {
+                "name": "RencanaPendampingPersalinan",
+                "bind": "/model/instance/rencana_persalinan/B01038",
+				"source": "kartu_ibu.ibu.RencanaPendampingPersalinan"
+            },
+            {
+                "name": "Transportasi",
+                "bind": "/model/instance/rencana_persalinan/B01039",
+				"source": "kartu_ibu.ibu.Transportasi"
+            },
+            {
+                "name": "Pendonor",
+                "bind": "/model/instance/rencana_persalinan/B01040",
+				"source": "kartu_ibu.ibu.Pendonor"
+            },
+            {
+                "name": "KondisiRumah",
+                "bind": "/model/instance/rencana_persalinan/B01041",
+				"source": "kartu_ibu.ibu.KondisiRumah"
+            },
+            {
+                "name": "PersediaanPerlengkapanPersalinan",
+                "bind": "/model/instance/rencana_persalinan/B01042",
+				"source": "kartu_ibu.ibu.PersediaanPerlengkapanPersalinan"
+            },
+            {
+                "name": "Tanggalkujungan",
+                "bind": "/model/instance/rencana_persalinan/B01043",
+				"source": "kartu_ibu.ibu.Tanggalkujungan"
+            },
+            {
+                "name": "Jamkesmas",
+                "bind": "/model/instance/rencana_persalinan/B01044",
+				"source": "kartu_ibu.ibu.Jamkesmas"
+            },
+            {
+                "name": "CaraMasukTempatPelayanan",
+                "bind": "/model/instance/rencana_persalinan/B01045",
+				"source": "kartu_ibu.ibu.CaraMasukTempatPelayanan"
+            },
+            {
+                "name": "UsiaKlinis",
+                "bind": "/model/instance/rencana_persalinan/B01046",
+				"source": "kartu_ibu.ibu.UsiaKlinis"
+            },
+            {
+                "name": "TrimesterKe",
+                "bind": "/model/instance/rencana_persalinan/B01047",
+				"source": "kartu_ibu.ibu.TrimesterKe"
+            },
+            {
+                "name": "AnamnesisIbu",
+                "bind": "/model/instance/rencana_persalinan/B01048",
+				"source": "kartu_ibu.ibu.AnamnesisIbu"
+            },
+            {
+                "name": "BBKg",
+                "bind": "/model/instance/rencana_persalinan/B01049",
+				"source": "kartu_ibu.ibu.BBKg"
+            },
+            {
+                "name": "TDSistolik",
+                "bind": "/model/instance/rencana_persalinan/B01050",
+				"source": "kartu_ibu.ibu.TDSistolik"
+            },
+            {
+                "name": "TDDiastolik",
+                "bind": "/model/instance/rencana_persalinan/B01051",
+				"source": "kartu_ibu.ibu.TDDiastolik"
+            },
+            {
+                "name": "LILA",
+                "bind": "/model/instance/rencana_persalinan/B01052",
+				"source": "kartu_ibu.ibu.LILA"
+            },
+            {
+                "name": "StatusGiziibu",
+                "bind": "/model/instance/rencana_persalinan/B01053",
+				"source": "kartu_ibu.ibu.StatusGiziibu"
+            },
+            {
+                "name": "TFU",
+                "bind": "/model/instance/rencana_persalinan/B01054",
+				"source": "kartu_ibu.ibu.TFU"
+            },
+            {
+                "name": "RefleksPatelaIbu",
+                "bind": "/model/instance/rencana_persalinan/B01055",
+				"source": "kartu_ibu.ibu.RefleksPatelaIbu"
+            },
+            {
+                "name": "DJJ",
+                "bind": "/model/instance/rencana_persalinan/B01056",
+				"source": "kartu_ibu.ibu.DJJ"
+            },
+            {
+                "name": "KepalaJaninTerhadapPAP",
+                "bind": "/model/instance/rencana_persalinan/B01057",
+				"source": "kartu_ibu.ibu.KepalaJaninTerhadapPAP"
+            },
+            {
+                "name": "TaksiranBeratJanin",
+                "bind": "/model/instance/rencana_persalinan/B01058",
+				"source": "kartu_ibu.ibu.TaksiranBeratJanin"
+            },
+            {
+                "name": "PersentasiJanin",
+                "bind": "/model/instance/rencana_persalinan/B01059",
+				"source": "kartu_ibu.ibu.PersentasiJanin"
+            },
+            {
+                "name": "JumlahJanin",
+                "bind": "/model/instance/rencana_persalinan/B01060",
+				"source": "kartu_ibu.ibu.JumlahJanin"
+            },
+            {
+                "name": "StatusImunisasiTT",
+                "bind": "/model/instance/rencana_persalinan/B01061",
+				"source": "kartu_ibu.ibu.StatusImunisasiTT"
+            },
+            {
+                "name": "PelayananInjeksiTT",
+                "bind": "/model/instance/rencana_persalinan/B01062",
+				"source": "kartu_ibu.ibu.PelayananInjeksiTT"
+            },
+            {
+                "name": "PelayananCatatdiBukuKia",
+                "bind": "/model/instance/rencana_persalinan/B01063",
+				"source": "kartu_ibu.ibu.PelayananCatatdiBukuKia"
+            },
+            {
+                "name": "PelayananFe",
+                "bind": "/model/instance/rencana_persalinan/B01064",
+				"source": "kartu_ibu.ibu.PelayananFe"
+            },
+            {
+                "name": "LaboratoriumPeriksaHbDilakukan",
+                "bind": "/model/instance/rencana_persalinan/B01065",
+				"source": "kartu_ibu.ibu.LaboratoriumPeriksaHbDilakukan"
+            },
+            {
+                "name": "LaboratoriumPeriksaHbHasil",
+                "bind": "/model/instance/rencana_persalinan/B01066",
+				"source": "kartu_ibu.ibu.LaboratoriumPeriksaHbHasil"
+            },
+            {
+                "name": "LaboratoriumPeriksaHbAnemia",
+                "bind": "/model/instance/rencana_persalinan/B01067",
+				"source": "kartu_ibu.ibu.LaboratoriumPeriksaHbAnemia"
+            },
+            {
+                "name": "LaboratoriumProteinUria",
+                "bind": "/model/instance/rencana_persalinan/B01068",
+				"source": "kartu_ibu.ibu.LaboratoriumProteinUria"
+            },
+            {
+                "name": "LaboratoriumGulaDarah",
+                "bind": "/model/instance/rencana_persalinan/B01069",
+				"source": "kartu_ibu.ibu.LaboratoriumGulaDarah"
+            },
+            {
+                "name": "LaboratoriumThalasemia",
+                "bind": "/model/instance/rencana_persalinan/B01070",
+				"source": "kartu_ibu.ibu.LaboratoriumThalasemia"
+            },
+            {
+                "name": "LaboratoriumSifilis",
+                "bind": "/model/instance/rencana_persalinan/B01071",
+				"source": "kartu_ibu.ibu.LaboratoriumSifilis"
+            },
+            {
+                "name": "LaboratoriumHBsAg",
+                "bind": "/model/instance/rencana_persalinan/B01072",
+				"source": "kartu_ibu.ibu.LaboratoriumHBsAg"
+            },
+            {
+                "name": "IntegrasiProgramPMTCTVCT",
+                "bind": "/model/instance/rencana_persalinan/B01073",
+				"source": "kartu_ibu.ibu.IntegrasiProgramPMTCTVCT"
+            },
+            {
+                "name": "IntegrasiProgramPMTCTPeriksaDarah",
+                "bind": "/model/instance/rencana_persalinan/B01074",
+				"source": "kartu_ibu.ibu.IntegrasiProgramPMTCTPeriksaDarah"
+            },
+            {
+                "name": "IntegrasiProgramPMTCTSerologi",
+                "bind": "/model/instance/rencana_persalinan/B01075",
+				"source": "kartu_ibu.ibu.IntegrasiProgramPMTCTSerologi"
+            },
+            {
+                "name": "IntegrasiProgramPMTCTARVProfilaksis",
+                "bind": "/model/instance/rencana_persalinan/B01076",
+				"source": "kartu_ibu.ibu.IntegrasiProgramPMTCTARVProfilaksis"
+            },
+            {
+                "name": "IntegrasiProgramMalariaPeriksaDarah",
+                "bind": "/model/instance/rencana_persalinan/B01077",
+				"source": "kartu_ibu.ibu.IntegrasiProgramMalariaPeriksaDarah"
+            },
+            {
+                "name": "IntegrasiProgramMalariaMalaria",
+                "bind": "/model/instance/rencana_persalinan/B01078",
+				"source": "kartu_ibu.ibu.IntegrasiProgramMalariaMalaria"
+            },
+            {
+                "name": "IntegrasiProgramMalariaObat",
+                "bind": "/model/instance/rencana_persalinan/B01079",
+				"source": "kartu_ibu.ibu.IntegrasiProgramMalariaObat"
+            },
+            {
+                "name": "IntegrasiProgramMalariaKelambuBerinsektisida",
+                "bind": "/model/instance/rencana_persalinan/B01080",
+				"source": "kartu_ibu.ibu.IntegrasiProgramMalariaKelambuBerinsektisida"
+            },
+            {
+                "name": "IntegrasiProgramTBDahak",
+                "bind": "/model/instance/rencana_persalinan/B01081",
+				"source": "kartu_ibu.ibu.IntegrasiProgramTBDahak"
+            },
+            {
+                "name": "IntegrasiProgramTBTBC",
+                "bind": "/model/instance/rencana_persalinan/B01082",
+				"source": "kartu_ibu.ibu.IntegrasiProgramTBTBC"
+            },
+            {
+                "name": "IntegrasiProgramTBObat",
+                "bind": "/model/instance/rencana_persalinan/B01083",
+				"source": "kartu_ibu.ibu.IntegrasiProgramTBObat"
+            },
+            {
+                "name": "Tanggal",
+                "bind": "/model/instance/rencana_persalinan/B01084",
+				"source": "kartu_ibu.ibu.Tanggal"
+            },
+            {
+                "name": "ResikoTerdeteksiPertamaKaliOleh",
+                "bind": "/model/instance/rencana_persalinan/B01085",
+				"source": "kartu_ibu.ibu.ResikoTerdeteksiPertamaKaliOleh"
+            },
+            {
+                "name": "KomplikasidalamKehamilan",
+                "bind": "/model/instance/rencana_persalinan/B01086",
+				"source": "kartu_ibu.ibu.KomplikasidalamKehamilan"
+            },
+            {
+                "name": "DirujukKe",
+                "bind": "/model/instance/rencana_persalinan/B01087",
+				"source": "kartu_ibu.ibu.DirujukKe"
+            },
+            {
+                "name": "DirujukKelainlain",
+                "bind": "/model/instance/rencana_persalinan/B01088",
+				"source": "kartu_ibu.ibu.DirujukKelainlain"
+            },
+            {
+                "name": "KeadaanIbusaatTiba",
+                "bind": "/model/instance/rencana_persalinan/B01089",
+				"source": "kartu_ibu.ibu.KeadaanIbusaatTiba"
+            },
+            {
+                "name": "KeadaanIbusaatPulang",
+                "bind": "/model/instance/rencana_persalinan/B01090",
+				"source": "kartu_ibu.ibu.KeadaanIbusaatPulang"
+            },
+            {
+                "name": "Keterangan",
+                "bind": "/model/instance/rencana_persalinan/B01091",
+				"source": "kartu_ibu.ibu.Keterangan"
+            },
+            {
+                "name": "isOutOfArea",
+                "value": "false"
+            },
+            {
+                "name": "isClosed",
+                "value": "false"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/rencana_persalinan/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/rencana_persalinan/today"
+            }
+        ]
+    }
+}
