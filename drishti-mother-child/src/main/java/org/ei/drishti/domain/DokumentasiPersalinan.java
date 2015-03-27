@@ -14,13 +14,13 @@ public class DokumentasiPersalinan extends MotechBaseDataObject {
 	@JsonProperty
 	private String id;
 	@JsonProperty
-	private String UsiaKehamilansaatpersalinan;
+	private String CaraPersalinanIbu;
 	@JsonProperty
-	private String UsiakehamilanberdasarkanHPHT;
+	private String TanggalKalaIAktif;
 	@JsonProperty
-	private String KeadaanIbu;
+	private String TanggalKalaII;
 	@JsonProperty
-	private String KeadaanBayi;
+	private String TanggalPlasentaLahir;
 	@JsonProperty
 	private String Persentasi;
 	@JsonProperty
@@ -57,35 +57,35 @@ public class DokumentasiPersalinan extends MotechBaseDataObject {
 		this.id = id;
 	}
 
-	public String getUsiaKehamilansaatpersalinan() {
-		return UsiaKehamilansaatpersalinan;
+	public String getCaraPersalinanIbu() {
+		return CaraPersalinanIbu;
 	}
-	public void setUsiaKehamilansaatpersalinan(String UsiaKehamilansaatpersalinan) {
-		this.UsiaKehamilansaatpersalinan = UsiaKehamilansaatpersalinan;
-	}
-
-	public String getUsiakehamilanberdasarkanHPHT() {
-		return UsiakehamilanberdasarkanHPHT;
+	public void setCaraPersalinanIbu(String CaraPersalinanIbu) {
+		this.CaraPersalinanIbu = CaraPersalinanIbu;
 	}
 
-	public void setUsiakehamilanberdasarkanHPHT(String UsiakehamilanberdasarkanHPHT) {
-		this.UsiakehamilanberdasarkanHPHT = UsiakehamilanberdasarkanHPHT;
+	public String getTanggalKalaIAktif() {
+		return TanggalKalaIAktif;
 	}
 
-	public String getKeadaanIbu() {
-		return KeadaanIbu;
+	public void setTanggalKalaIAktif(String TanggalKalaIAktif) {
+		this.TanggalKalaIAktif = TanggalKalaIAktif;
 	}
 
-	public void setKeadaanIbu(String KeadaanIbu) {
-		this.KeadaanIbu = KeadaanIbu;
+	public String getTanggalKalaII() {
+		return TanggalKalaII;
 	}
 
-	public String getKeadaanBayi() {
-		return KeadaanBayi;
+	public void setTanggalKalaII(String TanggalKalaII) {
+		this.TanggalKalaII = TanggalKalaII;
 	}
 
-	public void setKeadaanBayi(String KeadaanBayi) {
-		this.KeadaanBayi = KeadaanBayi;
+	public String getTanggalPlasentaLahir() {
+		return TanggalPlasentaLahir;
+	}
+
+	public void setTanggalPlasentaLahir(String TanggalPlasentaLahir) {
+		this.TanggalPlasentaLahir = TanggalPlasentaLahir;
 	}
 
 	public void setPersentasi(String Persentasi) {
@@ -140,23 +140,23 @@ public class DokumentasiPersalinan extends MotechBaseDataObject {
 		return this;
 	}
 
-	public DokumentasiPersalinan withUsiaKehamilansaatpersalinan(String UsiaKehamilansaatpersalinan) {
-		setUsiaKehamilansaatpersalinan(UsiaKehamilansaatpersalinan);
+	public DokumentasiPersalinan withCaraPersalinanIbu(String CaraPersalinanIbu) {
+		setCaraPersalinanIbu(CaraPersalinanIbu);
 		return this;
 	}
 
-	public DokumentasiPersalinan withUsiakehamilanberdasarkanHPHT(String UsiakehamilanberdasarkanHPHT) {
-		setUsiakehamilanberdasarkanHPHT(UsiakehamilanberdasarkanHPHT);
+	public DokumentasiPersalinan withTanggalKalaIAktif(String TanggalKalaIAktif) {
+		setTanggalKalaIAktif(TanggalKalaIAktif);
 		return this;
 	}
 
-	public DokumentasiPersalinan withKeadaanIbu(String KeadaanIbu) {
-		setKeadaanIbu(KeadaanIbu);
+	public DokumentasiPersalinan withTanggalKalaII(String TanggalKalaII) {
+		setTanggalKalaII(TanggalKalaII);
 		return this;
 	}
 
-	public DokumentasiPersalinan withKeadaanBayi(String KeadaanBayi) {
-		setKeadaanBayi(KeadaanBayi);
+	public DokumentasiPersalinan withTanggalPlasentaLahir(String TanggalPlasentaLahir) {
+		setTanggalPlasentaLahir(TanggalPlasentaLahir);
 		return this;
 	}
 
