@@ -14,7 +14,7 @@ public class KohortBayi extends MotechBaseDataObject {
 	@JsonProperty
 	private String id;
 	@JsonProperty
-	private String Dusun;
+	private String childId;
 	@JsonProperty
 	private String NoIndex;
 	@JsonProperty
@@ -53,12 +53,12 @@ public class KohortBayi extends MotechBaseDataObject {
 		return id;
 	}
 
-	public String getDusun() {
-		return Dusun;
+	public String getchildId() {
+		return childId;
 	}
 
-	public void setDusun(String dusun) {
-		Dusun = dusun;
+	public void setchildId(String childId) {
+		this.childId = childId;
 	}
 
 	public String getNoIndex() {
@@ -144,8 +144,8 @@ public class KohortBayi extends MotechBaseDataObject {
 		return this;
 	}
 
-	public KohortBayi withDusun(String Dusun) {
-		setDusun(Dusun);
+	public KohortBayi withchildId(String childId) {
+		setchildId(childId);
 		return this;
 	}
 
