@@ -8,10 +8,13 @@ import org.codehaus.jackson.node.ObjectNode;
 import org.ei.drishti.common.AllConstants;
 import org.ei.drishti.domain.Child;
 import org.ei.drishti.domain.EligibleCouple;
+import org.ei.drishti.domain.KartuIbu;
 import org.ei.drishti.domain.Mother;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.ViewQuery;
 import org.ektorp.ViewResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -35,6 +38,8 @@ public class FormDataRepository {
     private CouchDbConnector db;
     private Map<String, String> designDocMap;
 
+    Logger logger = LoggerFactory.getLogger(FormDataRepository.class);
+
     @Autowired
     public FormDataRepository(@Qualifier(AllConstants.DRISHTI_DATABASE_CONNECTOR) CouchDbConnector db) {
         this.db = db;
@@ -44,18 +49,31 @@ public class FormDataRepository {
     private void initMaps() {
         designDocMap = new HashMap<>();
         fieldSetMap = new HashMap<>();
+
         designDocMap.put(AllConstants.FormEntityTypes.ELIGIBLE_COUPLE_TYPE, "EligibleCouple");
         designDocMap.put(AllConstants.FormEntityTypes.MOTHER_TYPE, "Mother");
         designDocMap.put(AllConstants.FormEntityTypes.CHILD_TYPE, "Child");
+        designDocMap.put(AllConstants.FormEntityTypes.KARTU_IBU_TYPE, "KartuIbu");
+
         fieldSetMap.put(AllConstants.FormEntityTypes.ELIGIBLE_COUPLE_TYPE, EligibleCouple.class.getDeclaredFields());
         fieldSetMap.put(AllConstants.FormEntityTypes.MOTHER_TYPE, Mother.class.getDeclaredFields());
         fieldSetMap.put(AllConstants.FormEntityTypes.CHILD_TYPE, Child.class.getDeclaredFields());
+        fieldSetMap.put(AllConstants.FormEntityTypes.KARTU_IBU_TYPE, KartuIbu.class.getDeclaredFields());
     }
 
     public String saveEntity(String entityType, String fields) {
+
+        logger.debug("Entity Type: " + entityType);
+
         Map<String, String> updatedFieldsMap = getStringMapFromJSON(fields);
         String entityId = updatedFieldsMap.get(ID);
         String docEntityType = designDocMap.get(entityType);
+
+        if(docEntityType == null){
+            docEntityType = "it is null";
+        }else if(docEntityType.equalsIgnoreCase("null")){
+            docEntityType = "the string itself is null";
+        }
 
         List<ViewResult.Row> viewQueryResult = getDBViewQueryResult(entityId, docEntityType);
 

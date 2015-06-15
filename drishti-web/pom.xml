@@ -39,6 +39,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>8.0.1.v20110908</version>
                 <configuration>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
                     <systemProperties>
                         <systemProperty>
                             <name>jetty.port</name>
