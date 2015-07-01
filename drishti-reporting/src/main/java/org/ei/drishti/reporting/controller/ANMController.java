@@ -8,8 +8,10 @@ import org.ei.drishti.common.util.HttpAgent;
 import org.ei.drishti.common.util.HttpResponse;
 import org.ei.drishti.dto.ANMDTO;
 import org.ei.drishti.dto.LocationDTO;
+import org.ei.drishti.dto.UniqueIdDTO;
 import org.ei.drishti.reporting.domain.Location;
 import org.ei.drishti.reporting.domain.SP_ANM;
+import org.ei.drishti.reporting.domain.UniqueId;
 import org.ei.drishti.reporting.factory.DetailsFetcherFactory;
 import org.ei.drishti.reporting.service.ANMService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +68,15 @@ public class ANMController {
         return new ResponseEntity<>(null, allowOrigin(drishtiSiteUrl), OK);
     }
 
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.OPTIONS}, value = "/unique-id")
+    @ResponseBody
+    public ResponseEntity<List<UniqueIdDTO>> getUniqueId(@RequestParam("anm-id") String anmIdentifier){
+        List uniqueIdsforAnm = anmService.getUniqueIdsforAnm(anmIdentifier);
+        return new ResponseEntity<List<UniqueIdDTO>>(convertToUniqueIdDTO(uniqueIdsforAnm),
+                allowOrigin(drishtiSiteUrl),
+                OK);
+    }
+
     private List<ANMDTO> convertToDTO(List<SP_ANM> anms) {
         return with(anms).convert(new Converter<SP_ANM, ANMDTO>() {
             @Override
@@ -76,6 +87,15 @@ public class ANMController {
 
             private LocationDTO convertToDTO(Location location) {
                 return new LocationDTO(location.subCenter(), location.phcName(), location.taluka(), location.district(), location.state());
+            }
+        });
+    }
+
+    private List<UniqueIdDTO> convertToUniqueIdDTO(List<UniqueId> uniqueIds){
+        return with(uniqueIds).convert(new Converter<UniqueId, UniqueIdDTO>() {
+            @Override
+            public UniqueIdDTO convert(UniqueId uniqueId) {
+                return new UniqueIdDTO(uniqueId.getLastValue() - UniqueId.INCREMENT, uniqueId.getLastValue());
             }
         });
     }
