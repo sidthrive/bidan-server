@@ -8,11 +8,11 @@ import javax.persistence.*;
 @Entity
 @Table(name="unique_id")
 @NamedQueries({
-        @NamedQuery(name = UniqueId.FIND_BY_ANM_IDENTIFIER,
-        query = "select r from UniqueId r, ANM a where a.anmIdentifier = :anmIdentifier and r.anm_id = a.id")
+        @NamedQuery(name = UniqueId.FIND_UNIQUE_ID_BY_ANM_IDENTIFIER,
+        query = "select r from UniqueId r, ANM a where a.anmIdentifier = :anmIdentifier and r.anm.id = a.id")
 })
 public class UniqueId {
-    public static final String FIND_BY_ANM_IDENTIFIER = "find.by.anm.identifier";
+    public static final String FIND_UNIQUE_ID_BY_ANM_IDENTIFIER = "find.unique.id.by.anm.identifier";
     public static final int INCREMENT = 10000;
 
     @Id
@@ -24,7 +24,7 @@ public class UniqueId {
     @ManyToOne
     private ANM anm;
 
-    @Column(name = "lastValue")
+    @Column(name = "last_value")
     private Long lastValue;
 
     public Integer getId() {

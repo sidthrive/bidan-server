@@ -22,9 +22,10 @@ public class ANMService {
     }
 
     @Autowired
-    public ANMService(AllSP_ANMsRepository allANMsRepository, AllLocationsRepository allLocationsRepository) {
+    public ANMService(AllSP_ANMsRepository allANMsRepository, AllLocationsRepository allLocationsRepository, AllUniqueIdRepository allUniqueIdRepository) {
         this.allANMsRepository = allANMsRepository;
         this.allLocationsRepository = allLocationsRepository;
+        this.allUniqueIdRepository = allUniqueIdRepository;
     }
 
     @Transactional("service_provided")

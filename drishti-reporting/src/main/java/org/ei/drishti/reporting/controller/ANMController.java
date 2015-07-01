@@ -73,7 +73,7 @@ public class ANMController {
     public ResponseEntity<List<UniqueIdDTO>> getUniqueId(@RequestParam("anm-id") String anmIdentifier){
         List uniqueIdsforAnm = anmService.getUniqueIdsforAnm(anmIdentifier);
         return new ResponseEntity<List<UniqueIdDTO>>(convertToUniqueIdDTO(uniqueIdsforAnm),
-                allowOrigin(drishtiSiteUrl),
+                allowOrigin("*"),
                 OK);
     }
 
@@ -95,7 +95,7 @@ public class ANMController {
         return with(uniqueIds).convert(new Converter<UniqueId, UniqueIdDTO>() {
             @Override
             public UniqueIdDTO convert(UniqueId uniqueId) {
-                return new UniqueIdDTO(uniqueId.getLastValue() - UniqueId.INCREMENT, uniqueId.getLastValue());
+                return new UniqueIdDTO(uniqueId.getLastValue() - UniqueId.INCREMENT + 1, uniqueId.getLastValue());
             }
         });
     }

@@ -25,7 +25,7 @@ public class AllUniqueIdRepository {
     }
 
     public List fetchUniqueIds(String anmIdentifier){
-        return dataAccessTemplate.findByNamedQueryAndNamedParam(UniqueId.FIND_BY_ANM_IDENTIFIER,
+        return dataAccessTemplate.findByNamedQueryAndNamedParam(UniqueId.FIND_UNIQUE_ID_BY_ANM_IDENTIFIER,
                 new String[]{"anmIdentifier"}, new Object[]{anmIdentifier});
     }
 }
