@@ -20,7 +20,8 @@ public class ZiggyService {
     private static Logger logger = LoggerFactory.getLogger(ZiggyService.class.toString());
     private static final String SAVE_METHOD_NAME = "createOrUpdateEntity";
     private static final String JS_INIT_SCRIPT = "require([\"ziggy/FormDataController\"], function (FormDataController) {\n" +
-            "    controller = FormDataController;\n" +
+            "    controller = FormDataController" +
+            ";\n" +
             "});";
     private static final String ZIGGY_FILE_LOADER = "ziggyFileLoader";
     private static final String REPOSITORY = "formDataRepositoryContext";
