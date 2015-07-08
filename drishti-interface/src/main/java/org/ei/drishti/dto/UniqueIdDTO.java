@@ -2,38 +2,30 @@ package org.ei.drishti.dto;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Anis on 7/1/2015.
  */
 public class UniqueIdDTO {
-    @JsonProperty
-    private Long firstId;
-    @JsonProperty
-    private Long lastId;
+
+
+    private List<Long> Ids;
 
     public UniqueIdDTO(){
-        this.firstId = -1L;
-        this.lastId = -1L;
+        this.Ids = new ArrayList<Long>();
     }
 
-    public UniqueIdDTO(Long firstId, Long lastId) {
-        this.firstId = firstId;
-        this.lastId = lastId;
+    public UniqueIdDTO(List<Long> ids) {
+        this.Ids = ids;
     }
 
-    public Long getFirstId() {
-        return firstId;
+    public List<Long> getIds() {
+        return Ids;
     }
 
-    public void setFirstId(Long firstId) {
-        this.firstId = firstId;
-    }
-
-    public Long getLastId() {
-        return lastId;
-    }
-
-    public void setLastId(Long lastId) {
-        this.lastId = lastId;
+    public void setIds(List<Long> ids) {
+        Ids = ids;
     }
 }
