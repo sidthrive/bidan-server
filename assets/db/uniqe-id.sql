@@ -1,4 +1,19 @@
--- Table: report.unique_id
+
+
+-- Sequence: report.unique_id_id_seq
+
+-- DROP SEQUENCE report.unique_id_id_seq;
+
+CREATE SEQUENCE report.unique_id_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 3
+  CACHE 1;
+ALTER TABLE report.unique_id_id_seq
+  OWNER TO postgres;
+
+  -- Table: report.unique_id
 
 -- DROP TABLE report.unique_id;
 
@@ -17,3 +32,4 @@ WITH (
 );
 ALTER TABLE report.unique_id
   OWNER TO postgres;
+
