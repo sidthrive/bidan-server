@@ -13,7 +13,7 @@ import javax.persistence.*;
 })
 public class UniqueId {
     public static final String FIND_UNIQUE_ID_BY_ANM_IDENTIFIER = "find.unique.id.by.anm.identifier";
-    public static final int INCREMENT = 10000;
+    public static final int INCREMENT = 100;
 
     @Id
     @Column(name = "id")

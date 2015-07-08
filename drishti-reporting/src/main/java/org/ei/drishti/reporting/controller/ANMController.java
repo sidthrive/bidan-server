@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import org.ei.drishti.common.domain.UserDetail;
 import org.ei.drishti.common.util.HttpAgent;
 import org.ei.drishti.common.util.HttpResponse;
+import org.ei.drishti.common.util.VerhouffUtil;
 import org.ei.drishti.dto.ANMDTO;
 import org.ei.drishti.dto.LocationDTO;
 import org.ei.drishti.dto.UniqueIdDTO;
@@ -95,7 +96,13 @@ public class ANMController {
         return with(uniqueIds).convert(new Converter<UniqueId, UniqueIdDTO>() {
             @Override
             public UniqueIdDTO convert(UniqueId uniqueId) {
-                return new UniqueIdDTO(uniqueId.getLastValue() - UniqueId.INCREMENT + 1, uniqueId.getLastValue());
+                UniqueIdDTO dto = new UniqueIdDTO();
+                for(long i = uniqueId.getLastValue() - UniqueId.INCREMENT + 1;i<=uniqueId.getLastValue();i++){
+                    String verhouffId = VerhouffUtil.generateVerhoeff(Long.toString(i));
+                    String withVerhouff = i + "" + verhouffId;
+                    dto.getIds().add(Long.parseLong(withVerhouff));
+                }
+                return dto;
             }
         });
     }

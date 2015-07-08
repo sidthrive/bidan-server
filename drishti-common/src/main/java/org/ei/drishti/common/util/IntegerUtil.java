@@ -23,4 +23,5 @@ public class IntegerUtil {
     public static String parseValidIntegersAndDefaultInvalidOnesToEmptyString(String value) {
         return !isInteger(value) ? "" : String.valueOf(tryParse(value, 0));
     }
+
 }
