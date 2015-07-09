@@ -30,5 +30,4 @@ public class AllKartuIbu extends MotechBaseRepository<KartuIbu> {
 	        }
 	        return kartu_ibu.get(0);
 	}
-
 }
