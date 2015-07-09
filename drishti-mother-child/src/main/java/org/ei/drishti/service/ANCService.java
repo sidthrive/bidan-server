@@ -66,13 +66,13 @@ public class ANCService {
     public void registerANC(FormSubmission submission) {
         String motherId = submission.getField(AllConstants.ANCFormFields.MOTHER_ID);
 
-        if (!eligibleCouples.exists(submission.entityId())) {
-            logger.warn(format("Found mother without registered eligible couple. Ignoring: {0} for mother with id: {1} for ANM: {2}",
-                    submission.entityId(), motherId, submission.anmId()));
-            return;
-        }
+//        if (!eligibleCouples.exists(submission.entityId())) {
+//            logger.warn(format("Found mother without registered eligible couple. Ignoring: {0} for mother with id: {1} for ANM: {2}",
+//                    submission.entityId(), motherId, submission.anmId()));
+//            return;
+//        }
 
-        Mother mother = allMothers.findByCaseId(motherId);
+        Mother mother = allMothers.findById(motherId);
         allMothers.update(mother.withAnm(submission.anmId()));
 
         ancSchedulesService.enrollMother(motherId, parse(submission.getField(REFERENCE_DATE)));
@@ -90,14 +90,14 @@ public class ANCService {
             return;
         }
 
-        Mother mother = allMothers.findByCaseId(motherId);
+        Mother mother = allMothers.findById(motherId);
         allMothers.update(mother.withAnm(submission.anmId()));
 
         ancSchedulesService.enrollMother(motherId, parse(submission.getField(REFERENCE_DATE)));
     }
 
     public void ancVisit(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Found ANC visit without registered mother for Entity ID: " + submission.entityId());
             return;
@@ -137,7 +137,7 @@ public class ANCService {
     }
 
     public void ttProvided(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Tried to handle TT provided without registered mother. Submission: " + submission);
             return;
@@ -157,7 +157,7 @@ public class ANCService {
     }
 
     public void ifaTabletsGiven(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Tried to handle ifa tablets given without registered mother. Submission: " + submission);
             return;
@@ -180,7 +180,7 @@ public class ANCService {
     }
 
     public void hbTest(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Tried to handle Hb test given without registered mother. Submission: " + submission);
             return;
@@ -218,7 +218,7 @@ public class ANCService {
     }
 
     public void close(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Tried to close case without registered mother for case ID: " + submission.entityId());
             return;
@@ -239,7 +239,7 @@ public class ANCService {
     }
 
     public void ancInvestigations(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Tried to close case without registered mother for case ID: " + submission.entityId());
             return;

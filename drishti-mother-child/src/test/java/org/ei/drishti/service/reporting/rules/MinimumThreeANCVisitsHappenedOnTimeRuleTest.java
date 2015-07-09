@@ -40,7 +40,7 @@ public class MinimumThreeANCVisitsHappenedOnTimeRuleTest {
                         .put("ancVisitDate", "2013-07-16")
                         .map();
 
-        when(mothers.findByCaseId("mother id 1")).thenReturn(mother);
+        when(mothers.findById("mother id 1")).thenReturn(mother);
         List<Map<String, String>> ancVisits = asList(mapOf("ancVisit1", "1"), mapOf("ancVisit2", "2"), mapOf("ancVisit3", "3"));
         when(mother.ancVisits()).thenReturn(ancVisits);
         assertTrue(thirdANCVisitHappenedOnTimeRule.apply(new SafeMap(reportFields)));
@@ -54,7 +54,7 @@ public class MinimumThreeANCVisitsHappenedOnTimeRuleTest {
                         .put("ancVisitDate", "2013-10-08")
                         .map();
 
-        when(mothers.findByCaseId("mother id 1")).thenReturn(mother);
+        when(mothers.findById("mother id 1")).thenReturn(mother);
         List<Map<String, String>> ancVisits = asList(mapOf("ancVisit1", "1"), mapOf("ancVisit2", "2"), mapOf("ancVisit3", "3"), mapOf("ancVisit4", "4"));
         when(mother.ancVisits()).thenReturn(ancVisits);
         assertFalse(thirdANCVisitHappenedOnTimeRule.apply(new SafeMap(reportFields)));
@@ -68,7 +68,7 @@ public class MinimumThreeANCVisitsHappenedOnTimeRuleTest {
                         .put("ancVisitDate", "2013-07-16")
                         .map();
 
-        when(mothers.findByCaseId("mother id 1")).thenReturn(mother);
+        when(mothers.findById("mother id 1")).thenReturn(mother);
         List<Map<String, String>> ancVisits = asList(mapOf("ancVisit1", "1"), mapOf("ancVisit2", "2"));
         when(mother.ancVisits()).thenReturn(ancVisits);
         assertFalse(thirdANCVisitHappenedOnTimeRule.apply(new SafeMap(reportFields)));
@@ -82,7 +82,7 @@ public class MinimumThreeANCVisitsHappenedOnTimeRuleTest {
                         .put("ancVisitDate", "2013-07-15")
                         .map();
 
-        when(mothers.findByCaseId("mother id 1")).thenReturn(mother);
+        when(mothers.findById("mother id 1")).thenReturn(mother);
         List<Map<String, String>> ancVisits = asList(mapOf("ancVisit1", "1"), mapOf("ancVisit2", "2"), mapOf("ancVisit3", "3"));
         when(mother.ancVisits()).thenReturn(ancVisits);
         assertFalse(thirdANCVisitHappenedOnTimeRule.apply(new SafeMap(reportFields)));
@@ -96,7 +96,7 @@ public class MinimumThreeANCVisitsHappenedOnTimeRuleTest {
                         .put("ancVisitDate", "2013-10-09")
                         .map();
 
-        when(mothers.findByCaseId("mother id 1")).thenReturn(mother);
+        when(mothers.findById("mother id 1")).thenReturn(mother);
         List<Map<String, String>> ancVisits = asList(mapOf("ancVisit1", "1"), mapOf("ancVisit2", "2"), mapOf("ancVisit3", "3"));
         when(mother.ancVisits()).thenReturn(ancVisits);
         assertFalse(thirdANCVisitHappenedOnTimeRule.apply(new SafeMap(reportFields)));

@@ -52,7 +52,7 @@ public class EntitiesService {
     }
 
     private String ecNumber(Child child) {
-        return ecNumber(allMothers.findByCaseId(child.motherCaseId()));
+        return ecNumber(allMothers.findById(child.motherCaseId()));
     }
 
     private String ecNumber(Mother mother) {

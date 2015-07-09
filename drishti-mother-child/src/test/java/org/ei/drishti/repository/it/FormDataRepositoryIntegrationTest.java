@@ -145,7 +145,7 @@ public class FormDataRepositoryIntegrationTest {
 
         String entityId = repository.saveEntity("mother", fieldsJSON);
 
-        Mother savedMother = mothers.findByCaseId(entityId);
+        Mother savedMother = mothers.findById(entityId);
         Map<String, String> expectedDetails = mapOf("isHighPriority", "no");
         Mother expectedMother = new Mother("entity id 1", "ec 123", "thayi1").withDetails(expectedDetails);
         assertEquals(expectedMother, savedMother);

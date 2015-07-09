@@ -24,7 +24,7 @@ public class MotherReporter implements IReporter {
 
     @Override
     public void report(String entityId, String reportIndicator, Location location, String serviceProvidedDate, SafeMap reportData) {
-        Mother mother = allMothers.findByCaseId(entityId);
+        Mother mother = allMothers.findById(entityId);
         motherReportingService.reportToBoth(mother, Indicator.from(reportIndicator), serviceProvidedDate, reportData.get(SUBMISSION_DATE_FIELD_NAME), location);
     }
 

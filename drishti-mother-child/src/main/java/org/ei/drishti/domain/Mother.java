@@ -18,7 +18,7 @@ import java.util.Map;
 import static java.lang.String.valueOf;
 import static org.ei.drishti.common.AllConstants.IFAFields.TOTAL_NUMBER_OF_IFA_TABLETS_GIVEN;
 
-@TypeDiscriminator("doc.type === 'kartu_ibu'")
+@TypeDiscriminator("doc.type === 'Mother'")
 public class Mother extends MotechBaseDataObject {
     @JsonProperty
     private String caseId;
@@ -40,8 +40,6 @@ public class Mother extends MotechBaseDataObject {
     private String isClosed;
 
     //from kartu ibu
-    @JsonProperty
-    private String id;
     @JsonProperty
     private String district;
     @JsonProperty

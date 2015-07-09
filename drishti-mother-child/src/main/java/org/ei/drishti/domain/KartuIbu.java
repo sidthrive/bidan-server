@@ -7,7 +7,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import org.ektorp.support.TypeDiscriminator;
 import org.motechproject.model.MotechBaseDataObject;
 
-@TypeDiscriminator("doc.type === 'kartu_ibu_old'")
+@TypeDiscriminator("doc.type === 'kartu_ibu'")
 public class KartuIbu extends MotechBaseDataObject {
 	@JsonProperty
 	private String caseId;

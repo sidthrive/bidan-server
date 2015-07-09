@@ -72,7 +72,7 @@ public class PNCService {
     }
 
     public void deliveryOutcome(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn(format("Failed to handle delivery outcome as there is no mother registered with ID: {0}", submission.entityId()));
             return;
@@ -146,7 +146,7 @@ public class PNCService {
     }
 
     public void close(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn(format("Failed to close PNC as there is no mother registered with ID: {0}", submission.entityId()));
             return;
@@ -167,7 +167,7 @@ public class PNCService {
     }
 
     public void autoClosePNCCase(String entityId) {
-        Mother mother = allMothers.findByCaseId(entityId);
+        Mother mother = allMothers.findById(entityId);
         if (mother == null) {
             logger.warn(format("Failed to auto close PNC as there is no mother registered with ID: {0}", entityId));
             return;
@@ -181,7 +181,7 @@ public class PNCService {
     }
 
     public void pncVisitHappened(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         if (mother == null) {
             logger.warn("Found PNC visit without registered mother for entity ID: " + submission.entityId());
             return;
@@ -232,7 +232,7 @@ public class PNCService {
     }
 
     public void reportPPFamilyPlanning(FormSubmission submission) {
-        Mother mother = allMothers.findByCaseId(submission.entityId());
+        Mother mother = allMothers.findById(submission.entityId());
         EligibleCouple eligibleCouple = allEligibleCouples.findByCaseId(mother.ecCaseId());
 
         EligibleCouple updatedEligibleCouple = updateECWithFPMethod(submission, eligibleCouple);

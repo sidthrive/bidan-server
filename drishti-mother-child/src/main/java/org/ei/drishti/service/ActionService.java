@@ -39,7 +39,7 @@ public class ActionService {
         // TODO: Get rid of this horrible if-else after Motech-Platform fixes the bug related to metadata in motech-schedule-tracking.
         String anmIdentifier;
         if (mother.equals(beneficiaryType)) {
-            anmIdentifier = allMothers.findByCaseId(caseID).anmIdentifier();
+            anmIdentifier = allMothers.findById(caseID).anmIdentifier();
         } else if (child.equals(beneficiaryType)) {
             anmIdentifier = allChildren.findByCaseId(caseID).anmIdentifier();
         } else if (ec.equals(beneficiaryType)) {

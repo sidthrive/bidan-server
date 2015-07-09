@@ -48,7 +48,7 @@ public class ActionServiceTest {
 
     @Test
     public void shouldSaveAlertActionForMother() throws Exception {
-        when(allMothers.findByCaseId("Case X")).thenReturn(new Mother("Case X", "EC-CASE-1", "Thayi 1").withAnm("ANM ID M"));
+        when(allMothers.findById("Case X")).thenReturn(new Mother("Case X", "EC-CASE-1", "Thayi 1").withAnm("ANM ID M"));
 
         DateTime dueDate = DateTime.now().minusDays(1);
         DateTime expiryDate = dueDate.plusWeeks(2);
@@ -59,7 +59,7 @@ public class ActionServiceTest {
 
     @Test
     public void shouldDeleteExistingAlertBeforeCreatingNewOne() throws Exception {
-        when(allMothers.findByCaseId("Case X")).thenReturn(new Mother("Case X", "EC-CASE-1", "Thayi 1").withAnm("ANM ID M"));
+        when(allMothers.findById("Case X")).thenReturn(new Mother("Case X", "EC-CASE-1", "Thayi 1").withAnm("ANM ID M"));
 
         DateTime dueDate = DateTime.now().minusDays(1);
         DateTime expiryDate = dueDate.plusWeeks(2);
@@ -104,7 +104,7 @@ public class ActionServiceTest {
 
     @Test
     public void shouldCreateACloseActionForAVisitOfAMother() throws Exception {
-        when(allMothers.findByCaseId("Case X")).thenReturn(new Mother("Case X", "EC-CASE-1", "Thayi 1").withAnm("ANM ID 1").withLocation("bherya", "Sub Center", "PHC X"));
+        when(allMothers.findById("Case X")).thenReturn(new Mother("Case X", "EC-CASE-1", "Thayi 1").withAnm("ANM ID 1").withLocation("bherya", "Sub Center", "PHC X"));
 
         service.markAlertAsClosed("Case X", "ANM ID 1", "ANC 1", "2012-12-12");
 
