@@ -6,6 +6,7 @@ import org.ei.drishti.common.AllConstants;
 import org.ei.drishti.domain.Child;
 import org.ei.drishti.domain.KartuIbu;
 import org.ektorp.CouchDbConnector;
+import org.ektorp.support.GenerateView;
 import org.motechproject.dao.MotechBaseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,8 @@ public class AllKartuIbu extends MotechBaseRepository<KartuIbu> {
     public AllKartuIbu(@Qualifier(AllConstants.DRISHTI_DATABASE_CONNECTOR) CouchDbConnector db) {
         super(KartuIbu.class, db);
     }
+
+	@GenerateView
 	public KartuIbu findByCaseId(String caseId) {
 		 List<KartuIbu> kartu_ibu = queryView("by_caseId", caseId);
 	        if (kartu_ibu == null || kartu_ibu.isEmpty()) {
@@ -27,5 +30,4 @@ public class AllKartuIbu extends MotechBaseRepository<KartuIbu> {
 	        }
 	        return kartu_ibu.get(0);
 	}
-
 }

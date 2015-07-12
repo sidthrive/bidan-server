@@ -38,6 +38,26 @@ public class Mother extends MotechBaseDataObject {
     private String phc;
     @JsonProperty
     private String isClosed;
+
+    //from kartu ibu
+    @JsonProperty
+    private String district;
+    @JsonProperty
+    private String Province;
+    @JsonProperty
+    private String Kabupaten;
+    @JsonProperty
+    private String puskesmas;
+    @JsonProperty
+    private String wifeName;
+    @JsonProperty
+    private String wifeAge;
+    @JsonProperty
+    private String womanDOB;
+    @JsonProperty
+    private String phoneNumber;
+
+
     @JsonProperty
     private Map<String, String> details;
     @JsonProperty
