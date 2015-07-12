@@ -40,7 +40,7 @@ public class MotherReporterTest {
         Location location = new Location("village", "sc", "phc");
         SafeMap safeMap = new SafeMap().put("submissionDate", "2012-03-01");
 
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
 
         motherReporter.report(submission.entityId(), "MMA", location, "2012-03-01", safeMap);
 

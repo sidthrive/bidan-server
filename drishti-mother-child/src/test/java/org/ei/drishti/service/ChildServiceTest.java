@@ -67,7 +67,7 @@ public class ChildServiceTest extends BaseUnitTest {
     public void shouldEnrollEveryChildIntoSchedulesAndReportDuringRegistration() {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "EC-CASE-1", "TC1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "EC-CASE-1", "TC1"));
         Child firstChild = new Child("child id 1", "mother id 1", "opv", "2", "female");
         Child secondChild = new Child("child id 2", "mother id 1", "opv", "2", "male");
         when(allChildren.findByMotherId("mother id 1")).thenReturn(asList(firstChild, secondChild));
@@ -109,7 +109,7 @@ public class ChildServiceTest extends BaseUnitTest {
                 .withSubForm(new SubFormData("child_registration",
                         asList(mapOf("id", "child id 1"))))
                 .build();
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "EC-CASE-1", "TC1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "EC-CASE-1", "TC1"));
 
         service.registerChildren(submission);
 
@@ -122,7 +122,7 @@ public class ChildServiceTest extends BaseUnitTest {
     public void shouldUpdateEveryChildWithMotherInfoAndImmunizationInfoDuringRegistration() {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "EC-CASE-1", "TC1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "EC-CASE-1", "TC1"));
         Child firstChild = new Child("child id 1", "mother id 1", "opv", "2", "female");
         Child secondChild = new Child("child id 2", "mother id 1", "opv", "2", "male");
         when(allChildren.findByMotherId("mother id 1")).thenReturn(asList(firstChild, secondChild));
@@ -153,7 +153,7 @@ public class ChildServiceTest extends BaseUnitTest {
     public void shouldNotHandleChildRegistrationWhenMotherIsNotFound() {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(null);
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(null);
         FormSubmission submission = create()
                 .withFormName("delivery_outcome")
                 .withANMId("anm id 1")
@@ -176,7 +176,7 @@ public class ChildServiceTest extends BaseUnitTest {
         Child child = new Child("child id 1", "mother id 1", "opv", "2", "female");
         Mother mother = new Mother("mother id 1", "ec id 1", "thayi card number");
         when(allChildren.findByCaseId("child id 1")).thenReturn(child);
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         FormSubmission submission = create()
                 .withFormName("child_registration_ec")
                 .withANMId("anm id 1")
@@ -211,7 +211,7 @@ public class ChildServiceTest extends BaseUnitTest {
         Child child = new Child("child id 1", "mother id 1", "opv", "2", "female");
         Mother mother = new Mother("mother id 1", "ec id 1", "thayi card number");
         when(allChildren.findByCaseId("child id 1")).thenReturn(child);
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         FormSubmission submission = create()
                 .withFormName("child_registration_ec")
                 .withANMId("anm id 1")

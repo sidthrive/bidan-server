@@ -35,7 +35,7 @@ public class LocationLoaderTest {
         initMocks(this);
         locationLoader = new LocationLoader(allEligibleCouples, allMothers, allChildren);
         when(allChildren.findByCaseId("child id 1")).thenReturn(child);
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(eligibleCouple);
         when(child.motherCaseId()).thenReturn("mother id 1");
         when(mother.ecCaseId()).thenReturn("ec id 1");
@@ -54,7 +54,7 @@ public class LocationLoaderTest {
 
     @Test
     public void shouldReturnLocationFromMotherEntityIfBindTypeIsMother() {
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
 
         locationLoader.loadLocationFor("mother", "mother id 1");
 

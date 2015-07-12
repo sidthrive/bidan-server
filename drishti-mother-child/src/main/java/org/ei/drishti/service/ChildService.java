@@ -57,7 +57,7 @@ public class ChildService {
     }
 
     public void registerChildren(FormSubmission submission) {
-        Mother mother = allMothers.findById(submission.entityId());
+        Mother mother = allMothers.findByCaseId(submission.entityId());
         if (mother == null) {
             logger.warn("Failed to handle children registration as there is no mother registered with id: " + submission.entityId());
             return;
@@ -115,7 +115,7 @@ public class ChildService {
     }
 
     private void closeMother(String field) {
-        Mother mother = allMothers.findById(field);
+        Mother mother = allMothers.findByCaseId(field);
         mother.setIsClosed(true);
         allMothers.update(mother);
     }

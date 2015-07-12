@@ -72,8 +72,8 @@ public class AllMothersIntegrationTest {
         Mother motherToRegister = new Mother(caseId, "EC-CASE-1", "THAYI-CARD-1");
         allMothers.add(motherToRegister);
 
-        assertThat(allMothers.findById(caseId), hasSameFieldsAs(motherToRegister));
-        assertThat(allMothers.findById("SOME OTHER ID"), is(nullValue()));
+        assertThat(allMothers.findByCaseId(caseId), hasSameFieldsAs(motherToRegister));
+        assertThat(allMothers.findByCaseId("SOME OTHER ID"), is(nullValue()));
     }
 
     @Test
@@ -92,7 +92,7 @@ public class AllMothersIntegrationTest {
 
         allMothers.close("CASE X");
 
-        assertThat(allMothers.findById("CASE X"), is(motherToRegister.setIsClosed(true)));
+        assertThat(allMothers.findByCaseId("CASE X"), is(motherToRegister.setIsClosed(true)));
     }
 
     @Test

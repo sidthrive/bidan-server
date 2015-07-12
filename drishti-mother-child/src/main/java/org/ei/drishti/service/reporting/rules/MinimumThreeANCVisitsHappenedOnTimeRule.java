@@ -28,7 +28,7 @@ public class MinimumThreeANCVisitsHappenedOnTimeRule implements IRule {
     public boolean apply(SafeMap reportFields) {
         LocalDate lmp = LocalDate.parse(reportFields.get(REFERENCE_DATE));
         LocalDate ancVisitDate = LocalDate.parse(reportFields.get(AllConstants.ANCFormFields.ANC_VISIT_DATE_FIELD));
-        Mother mother = mothers.findById(reportFields.get(ID));
+        Mother mother = mothers.findByCaseId(reportFields.get(ID));
         int numberOfANCVisitsHappened = mother.ancVisits().size();
 
         return (numberOfANCVisitsHappened == MINIMUM_NUMBER_OF_ANC_VISITS)

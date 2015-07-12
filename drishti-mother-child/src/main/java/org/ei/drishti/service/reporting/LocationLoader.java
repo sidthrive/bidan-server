@@ -43,7 +43,7 @@ public class LocationLoader implements ILocationLoader {
     }
 
     private Location loadLocationForMother(String caseId) {
-        Mother mother = allMothers.findById(caseId);
+        Mother mother = allMothers.findByCaseId(caseId);
         return loadLocationForEC(mother.ecCaseId());
     }
 

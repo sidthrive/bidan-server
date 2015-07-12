@@ -66,7 +66,7 @@ public class PNCServiceTest extends BaseUnitTest {
     public void shouldEnrollPNCIntoSchedulesDuringDeliveryOutcomeIfWomanOrMotherSurvives() {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "1234567"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "1234567"));
         FormSubmission submission = create()
                 .withFormName("delivery_outcome")
                 .withANMId("anm id 1")
@@ -142,7 +142,7 @@ public class PNCServiceTest extends BaseUnitTest {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
         when(allMothers.exists("mother id 1")).thenReturn(true);
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "1234567"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "1234567"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple("ec id 1", "123"));
 
         FormSubmission submission = create()
@@ -171,7 +171,7 @@ public class PNCServiceTest extends BaseUnitTest {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
         when(allMothers.exists("mother id 1")).thenReturn(true);
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "1234567"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "1234567"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple("ec id 1", "123"));
 
         FormSubmission submission = create()
@@ -237,7 +237,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldUpdateMotherWithChildrenDetailsWhenDeliveryOutcome() {
-        when(allMothers.findById("mother id 1"))
+        when(allMothers.findByCaseId("mother id 1"))
                 .thenReturn(new Mother("mother id 1", "ec id 1", "tc 1")
                         .withChildrenDetails(asList(EasyMap.create("id", "child id")
                                 .put("gender", "female")
@@ -349,7 +349,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotAddChildrenDetailsInTheCaseOfStillBirthDuringDeliveryOutcome() throws Exception {
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "tc 1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "tc 1"));
         FormSubmission submission = create()
                 .withFormName("delivery_outcome")
                 .withANMId("anm id 1")
@@ -427,7 +427,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldUnEnrollAMotherFromScheduleWhenPNCCaseIsClosed() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
 
         service.close(create().build());
 
@@ -436,7 +436,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldCloseAMotherWhenPNCIsClosed() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
 
         service.close(create().build());
 
@@ -445,7 +445,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotDoAnythingIfMotherIsNotRegistered() {
-        when(allMothers.findById("entity id 1")).thenReturn(null);
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(null);
 
         service.close(create().build());
 
@@ -457,7 +457,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldCloseECCaseAlsoWhenPNCIsClosedAndReasonIsDeath() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
 
         service.close(create().addFormField("closeReason", "death_of_mother").build());
 
@@ -466,7 +466,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldCloseECCaseAlsoWhenPNCIsClosedAndReasonIsPermanentRelocation() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
 
         service.close(create().addFormField("closeReason", "permanent_relocation").build());
 
@@ -475,7 +475,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotCloseECCaseWhenPNCIsClosedAndReasonIsNeitherDeathOrPermanentRelocation() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
 
         service.close(create().addFormField("closeReason", "other_reason").build());
 
@@ -484,7 +484,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldMarkAllActionsAsInactiveWhenPNCIsClosed() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
 
         service.close(create().build());
 
@@ -493,7 +493,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldDoReportingWhenPNCIsClosed() {
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("entity id 1", "ec entity id 1", "thayi 1"));
         when(reportFieldsDefinition.get("pnc_close")).thenReturn(asList("some-key"));
         FormSubmission submission = create()
                 .withFormName("pnc_close")
@@ -515,7 +515,7 @@ public class PNCServiceTest extends BaseUnitTest {
 
         service.pncVisitHappened(submission);
 
-        verify(allMothers).findById("entity id 1");
+        verify(allMothers).findByCaseId("entity id 1");
         verifyZeroInteractions(motherReportingService);
         verifyZeroInteractions(childReportingService);
     }
@@ -523,7 +523,7 @@ public class PNCServiceTest extends BaseUnitTest {
     @Test
     public void shouldReportPNCVisit() throws Exception {
         when(reportFieldsDefinition.get("pnc_visit")).thenReturn(asList("some-key"));
-        when(allMothers.findById("entity id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "TC1"));
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "TC1"));
 
         FormSubmission submission = create()
                 .withFormName("pnc_visit")
@@ -541,7 +541,7 @@ public class PNCServiceTest extends BaseUnitTest {
         when(reportFieldsDefinition.get("pnc_visit")).thenReturn(asList("pncVisitDate"));
         Mother mother = new Mother("mother id 1", "ec id 1", "TC1")
                 .withDetails(EasyMap.mapOf("some-key", "some-value"));
-        when(allMothers.findById("entity id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(mother);
 
         FormSubmission submission = create()
                 .withFormName("pnc_visit")
@@ -561,7 +561,7 @@ public class PNCServiceTest extends BaseUnitTest {
     public void shouldUpdateMotherWithPNCVisitDetails() throws Exception {
         Mother mother = new Mother("mother id 1", "ec id 1", "TC1")
                 .withDetails(EasyMap.mapOf("some-key", "some-value"));
-        when(allMothers.findById("entity id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(mother);
 
         FormSubmission submission = create()
                 .withFormName("pnc_visit")
@@ -613,7 +613,7 @@ public class PNCServiceTest extends BaseUnitTest {
         when(reportFieldsDefinition.get("pnc_visit")).thenReturn(asList("pncVisitDate"));
         Mother mother = new Mother("mother id 1", "ec id 1", "TC1")
                 .withDetails(EasyMap.create("some-key", "some-value").put("pncVisitDates", "2013-01-01").map());
-        when(allMothers.findById("entity id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("entity id 1")).thenReturn(mother);
 
         FormSubmission submission = create()
                 .withFormName("pnc_visit")
@@ -636,7 +636,7 @@ public class PNCServiceTest extends BaseUnitTest {
     public void shouldAutoClosePNCCaseWhenMotherExists() {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC1").withAnm("ANM 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC1").withAnm("ANM 1"));
 
         service.autoClosePNCCase("MOTHER-CASE-1");
 
@@ -650,7 +650,7 @@ public class PNCServiceTest extends BaseUnitTest {
     public void shouldNotAutoClosePNCCaseWhenMotherDoesNotExist() {
         DateTime currentTime = DateUtil.now();
         mockCurrentDate(currentTime);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(null);
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(null);
 
         service.autoClosePNCCase("MOTHER-CASE-1");
 
@@ -692,7 +692,7 @@ public class PNCServiceTest extends BaseUnitTest {
                 .withOCPFPDetails(Collections.<OCPFPDetails>emptyList())
                 .withFemaleSterilizationFPDetails(new ArrayList<FemaleSterilizationFPDetails>())
                 .withMaleSterilizationFPDetails(Collections.<MaleSterilizationFPDetails>emptyList());
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(eligibleCouple);
 
         service.reportPPFamilyPlanning(submission);
@@ -720,7 +720,7 @@ public class PNCServiceTest extends BaseUnitTest {
                 .withOCPFPDetails(Collections.<OCPFPDetails>emptyList())
                 .withFemaleSterilizationFPDetails(Collections.<FemaleSterilizationFPDetails>emptyList())
                 .withMaleSterilizationFPDetails(Collections.<MaleSterilizationFPDetails>emptyList());
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(eligibleCouple);
 
         service.reportPPFamilyPlanning(submission);
@@ -748,7 +748,7 @@ public class PNCServiceTest extends BaseUnitTest {
                 .withOCPFPDetails(Collections.<OCPFPDetails>emptyList())
                 .withFemaleSterilizationFPDetails(new ArrayList<FemaleSterilizationFPDetails>())
                 .withMaleSterilizationFPDetails(Collections.<MaleSterilizationFPDetails>emptyList());
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(eligibleCouple);
 
         service.reportPPFamilyPlanning(submission);
@@ -781,7 +781,7 @@ public class PNCServiceTest extends BaseUnitTest {
                 .withOCPFPDetails(Collections.<OCPFPDetails>emptyList())
                 .withFemaleSterilizationFPDetails(Collections.<FemaleSterilizationFPDetails>emptyList())
                 .withMaleSterilizationFPDetails(Collections.<MaleSterilizationFPDetails>emptyList());
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(eligibleCouple);
 
         service.reportPPFamilyPlanning(submission);

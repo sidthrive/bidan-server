@@ -71,7 +71,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("motherId", "CASE-1");
         reportData.put("registrationDate", "2012-01-01");
         reportData.put("submissionDate", "2012-01-01");
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-01"))).thenReturn(true);
 
@@ -88,7 +88,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("motherId", "CASE-1");
         reportData.put("registrationDate", "2011-12-15");
         reportData.put("submissionDate", "2011-12-15");
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2011-12-15"), parse("2011-12-15"))).thenReturn(true);
 
@@ -100,7 +100,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportMTPIndicatorBasedOnMTPTime() throws Exception {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-12-12"), parse("2012-12-12"))).thenReturn(true);
 
@@ -111,7 +111,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportMaternalDeath() throws Exception {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-12-12"), parse("2012-12-12"))).thenReturn(true);
 
@@ -123,7 +123,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldDeleteReportsIfCloseReasonIsWrongEntry() throws Exception {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-12-12"), parse("2012-12-12"))).thenReturn(true);
 
@@ -136,7 +136,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotReportMaternalDeathIfItIsNot() throws Exception {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-12-12"), parse("2012-12-12"))).thenReturn(true);
 
@@ -147,7 +147,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotReportIfReasonIsNotDeath() throws Exception {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-12-12"), parse("2012-12-12"))).thenReturn(true);
 
@@ -158,7 +158,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportIfReasonIsSpontaneousAbortion() throws Exception {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-12-12"), parse("2012-12-12"))).thenReturn(true);
 
@@ -174,7 +174,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ttDose", "tt1");
         reportData.put("ttDate", "2012-01-23");
         reportData.put("submissionDate", "2012-01-23");
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-23"), parse("2012-01-23"))).thenReturn(true);
 
@@ -190,7 +190,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ttDose", "tt2");
         reportData.put("ttDate", "2012-01-23");
         reportData.put("submissionDate", "2012-01-23");
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-23"), parse("2012-01-23"))).thenReturn(true);
 
@@ -207,7 +207,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ttDose", "ttbooster");
         reportData.put("ttDate", "2012-01-23");
         reportData.put("submissionDate", "2012-01-23");
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-23"), parse("2012-01-23"))).thenReturn(true);
 
@@ -244,7 +244,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ancVisitDate", visitDate);
         reportData.put("ancVisitNumber", "4");
         reportData.put("submissionDate", submissionDate);
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse(visitDate), parse(submissionDate))).thenReturn(true);
 
@@ -270,7 +270,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ancVisitDate", visitDate);
         reportData.put("submissionDate", submissionDate);
         reportData.put("ancVisitNumber", "4");
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.ancVisit(reportData);
@@ -295,7 +295,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ancVisitDate", visitDate);
         reportData.put("ancVisitNumber", "4");
         reportData.put("submissionDate", submissionDate);
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.ancVisit(reportData);
@@ -328,7 +328,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ancVisitDate", visitDate);
         reportData.put("ancVisitNumber", "3");
         reportData.put("submissionDate", submissionDate);
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.ancVisit(reportData);
@@ -364,7 +364,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ancVisitDate", visitDate);
         reportData.put("ancVisitNumber", "4");
         reportData.put("submissionDate", submissionDate);
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.ancVisit(reportData);
@@ -381,7 +381,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("ancVisitDate", visitDate);
         reportData.put("ancVisitNumber", "");
         reportData.put("submissionDate", submissionDate);
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.ancVisit(reportData);
@@ -391,7 +391,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportDeliveryWhenDeliveryOutcomeIsUpdatedWithOutcome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -413,7 +413,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportInstitutionalDeliveryAndNotReportLiveBirthWhenPlaceOfDeliveryIsNotHome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -435,7 +435,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotReportInstitutionalDeliveryAndReportLiveBirthAndNRHMLiveBirthWhenPlaceOfDeliveryIsHome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -458,7 +458,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportLiveBirthAndNRHMLiveBirthWhenDeliveryOutcomeIsUpdatedWithOutcomeAsLiveBirthAndDeliveryPlaceIsSubCenter() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -479,7 +479,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportStillBirthAndNRHMStillBirthWhenDeliveryOutcomeIsUpdatedWithOutcomeAsStillBirthAndDeliveryPlaceIsSubCenter() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -500,7 +500,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportMotherDeathDuringPregnancyOutcome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -521,7 +521,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportWomanDeathDuringPregnancyOutcome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -541,7 +541,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportCesareanWhenDeliveryOutcomeIsHandledAndDeliveryTypeIsCesarean() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -560,7 +560,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportCesareanPrivateFacilityWhenDeliveryOutcomeIsHandledAndDeliveryTypeIsCesareanAndDeliveryPlaceIsPrivateFacility() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -580,7 +580,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportCesareanGovernmentFacilityWhenDeliveryOutcomeIsHandledAndDeliveryTypeIsCesareanAndDeliveryPlaceIsNotPrivateFacility() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -600,7 +600,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportCesareanAndInstitutionalDeliveryWhenOAPNCIsRegisteredAndDeliveryTypeIsCesareanAndAtPHC() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -621,7 +621,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportCesareanPrivateFacilityAndInstitutionalDeliveryWhenOAPNCIsRegisteredAndDeliveryTypeIsCesareanAndDeliveryPlaceIsPrivateFacility() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -641,7 +641,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportCesareanGovernmentFacilityWhenOAPNCIsRegisteredAndDeliveryTypeIsCesareanAndPlaceNotPrivateFacility() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -659,7 +659,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportLiveBirthAndNRHMLiveBirthAndNotReportInstitutionalDeliveryWhenOAPNCIsRegisteredWithDeliveryOutcomeAsLiveBirthAndAtHome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -681,7 +681,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportPlaceOfDeliveryDuringPregnancyOutcome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-05-01"), parse("2012-05-02"))).thenReturn(true);
 
@@ -696,7 +696,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldReportMotherDeathDuringPNCClose() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-02-01"), parse("2012-02-01"))).thenReturn(true);
 
@@ -715,7 +715,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldDeleteReportsWhenPNCCloseReasonIsWrongEntry() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         Map<String, String> reportData = create("id", "CASE-1")
@@ -731,7 +731,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotReportMotherDeathDuringPNCCloseIfCloseReasonIsNotDeath() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         Map<String, String> reportData = create("id", "CASE-1")
@@ -748,7 +748,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotReportMotherDeathDuringPNCCloseIfNotMaternalDeath() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         Map<String, String> reportData = create("id", "CASE-1")
@@ -765,7 +765,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
 
     @Test
     public void shouldNotReportMotherDeathDuringPNCCloseIfNotWithin42DaysOfDeliveryOutcome() {
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER.withDeliveryOutCome("2012-01-01"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         Map<String, String> reportData = create("id", "CASE-1")
@@ -792,7 +792,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("pncVisitDates", "2011-12-25 2011-12-28 2012-01-01");
         reportData.put("pncVisitDate", "2012-01-01");
         reportData.put("submissionDate", "2012-01-02");
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -812,7 +812,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("id", "CASE-1");
         reportData.put("pncVisitDates", "2011-12-25 2011-12-26 2011-12-28 2012-01-01");
         reportData.put("pncVisitDate", "2012-01-01");
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.pncVisitHappened(reportData);
@@ -828,7 +828,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("id", "CASE-1");
         reportData.put("pncVisitDates", "2011-12-28 2012-01-01");
         reportData.put("pncVisitDate", "2012-01-01");
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.pncVisitHappened(reportData);
@@ -843,7 +843,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("id", "CASE-1");
         reportData.put("pncVisitDates", "2012-01-01");
         reportData.put("pncVisitDate", "2012-01-01");
-        when(allMothers.findById("CASE-1")).thenReturn(mother);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         service.pncVisitHappened(reportData);
@@ -889,7 +889,7 @@ public class MotherReportingServiceTest extends BaseUnitTest {
         reportData.put("motherId", "CASE-1");
         reportData.put("registrationDate", "2012-01-01");
         reportData.put("submissionDate", "2012-01-01");
-        when(allMothers.findById("CASE-1")).thenReturn(MOTHER);
+        when(allMothers.findByCaseId("CASE-1")).thenReturn(MOTHER);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-01"))).thenReturn(true);
 

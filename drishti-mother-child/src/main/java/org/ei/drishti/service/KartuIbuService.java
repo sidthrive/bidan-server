@@ -31,7 +31,7 @@ public class KartuIbuService {
 	 private KartuIbuSchedulesService schedulingService;
 
 	 public void registerKartuIbu(FormSubmission submission) {
-	     /*   KartuIbu kartu_ibu = allKartuIbu.findById(submission.entityId());
+	     /*   KartuIbu kartu_ibu = allKartuIbu.findByCaseId(submission.entityId());
 	        
 
 	        allKartuIbu.update(person.withANMIdentifier(submission.anmId()));

@@ -87,7 +87,7 @@ public class ChildReportingServiceTest {
                 .withLocation("bherya", "Sub Center", "PHC X")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
@@ -104,7 +104,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "female")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
@@ -122,7 +122,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "female")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -140,7 +140,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "female")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -157,7 +157,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "female")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -174,7 +174,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "male")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -192,7 +192,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "male")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -210,7 +210,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "male")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -227,7 +227,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "male")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -244,7 +244,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findByCaseId("CASE X")).thenReturn(new Child("CASE X", "MOTHER-CASE-1", "bcg", "3", "male")
                 .withAnm("ANM X")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-02"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -260,7 +260,7 @@ public class ChildReportingServiceTest {
         reportingData.put("immunizationDate", "2012-01-01");
         reportingData.put("submissionDate", "2012-01-01");
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -276,7 +276,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -300,7 +300,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -324,7 +324,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -348,7 +348,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -373,7 +373,7 @@ public class ChildReportingServiceTest {
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1").withDetails(EasyMap.create("registrtationDate", "2012-01-01").map()));
 
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         SafeMap reportData = new SafeMap();
@@ -397,7 +397,7 @@ public class ChildReportingServiceTest {
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1").withDetails(EasyMap.create("registrtationDate", "2012-01-01").map()));
 
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         SafeMap reportData = new SafeMap();
@@ -421,7 +421,7 @@ public class ChildReportingServiceTest {
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1").withDetails(EasyMap.create("registrtationDate", "2012-01-01").map()));
 
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
 
         SafeMap reportData = new SafeMap();
@@ -444,7 +444,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -468,7 +468,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -492,7 +492,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -517,7 +517,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -540,7 +540,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -563,7 +563,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -586,7 +586,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -609,7 +609,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -632,7 +632,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -655,7 +655,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -678,7 +678,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -701,7 +701,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -724,7 +724,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
 
@@ -747,7 +747,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -769,7 +769,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -791,7 +791,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -813,7 +813,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -835,7 +835,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -857,7 +857,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -879,7 +879,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -901,7 +901,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-02"))).thenReturn(true);
         SafeMap reportData = new SafeMap();
@@ -919,7 +919,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportCloseChildCaseWhenReasonIsDeath() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-03-05"), LocalDate.parse("2012-03-10"))).thenReturn(true);
 
@@ -932,7 +932,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportEarlyNeonatalMortalityDeath() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-07"), LocalDate.parse("2012-01-17"))).thenReturn(true);
 
@@ -945,7 +945,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportEarlyNeonatalMortalityDeathIfDateOfDeathIsAfterOneWeekOfBirth() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-08"), LocalDate.parse("2012-01-08"))).thenReturn(true);
 
@@ -957,7 +957,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportNeonatalMortalityDeath() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-28"), LocalDate.parse("2012-01-28"))).thenReturn(true);
 
@@ -970,7 +970,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportNeonatalMortalityDeathIfDateOfDeathIsAfterOneWeekOfBirth() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-29"), LocalDate.parse("2012-01-29"))).thenReturn(true);
 
@@ -982,7 +982,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportLateMortalityWithin29DaysAnd1YearOfBirth() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-29"), LocalDate.parse("2012-01-29"))).thenReturn(true);
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-12-31"), LocalDate.parse("2012-12-31"))).thenReturn(true);
@@ -998,7 +998,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportLateMortalityIfNotWithin29DaysAnd1YearOfBirth() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-28"), LocalDate.parse("2012-01-28"))).thenReturn(true);
 
@@ -1012,7 +1012,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportChildMortalityWithin7DaysAnd1YearOfBirth() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-08"), LocalDate.parse("2012-01-08"))).thenReturn(true);
 
@@ -1026,7 +1026,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportChildMortalityWithin5YearOfBirth() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2016-12-31"), LocalDate.parse("2016-12-31"))).thenReturn(true);
 
@@ -1039,7 +1039,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportChildMortalityAfter5YearOfBirth() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -1051,7 +1051,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportCloseChildCaseWhenReasonIsNotDeath() {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-03-05"), LocalDate.parse("2012-03-05"))).thenReturn(true);
 
@@ -1063,7 +1063,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldReportChildDeathDueToDiarrheaWhenChildIsClosedWithCauseOfDeathAsDiarrhea() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2016-12-31"), LocalDate.parse("2016-12-31"))).thenReturn(true);
 
@@ -1076,7 +1076,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldDeleteReportsWhenCloseReasonIsWrongEntry() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2016-12-31"), LocalDate.parse("2016-12-31"))).thenReturn(true);
 
@@ -1090,7 +1090,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportChildDeathDueToDiarrheaWhenChildIsClosedForOtherReasons() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2016-12-31"), LocalDate.parse("2016-12-31"))).thenReturn(true);
 
@@ -1102,7 +1102,7 @@ public class ChildReportingServiceTest {
     @Test
     public void shouldNotReportChildDeathDueToDiarrheaWhenChildIsClosedWithDeathCauseNotAsDiarrhea() throws Exception {
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2016-12-31"), LocalDate.parse("2016-12-31"))).thenReturn(true);
 
@@ -1117,7 +1117,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1140,7 +1140,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1163,7 +1163,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1186,7 +1186,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1209,7 +1209,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-02"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1232,7 +1232,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1255,7 +1255,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(parse("2012-01-01"), parse("2012-01-02"))).thenReturn(true);
 
@@ -1278,7 +1278,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -1297,7 +1297,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -1317,7 +1317,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth("2012-01-01")
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -1337,7 +1337,7 @@ public class ChildReportingServiceTest {
                 .withAnm("ANM X")
                 .withDateOfBirth(parse("2012-01-01").minusYears(5).minusDays(1).toString())
                 .withThayiCard("TC 1"));
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -1363,9 +1363,9 @@ public class ChildReportingServiceTest {
                 .thenReturn(asList(
                         new Child("child id 1", "mother id 1", "", "5", "male").withThayiCard("thayi card 1").withAnm("ANM X"),
                         new Child("child id 2", "mother id 2", "", "6", "female").withThayiCard("thayi card 2").withAnm("ANM X")));
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
-        when(allMothers.findById("mother id 2")).thenReturn(new Mother("mother id 2", "ec id 2", "thayi card 2"));
+        when(allMothers.findByCaseId("mother id 2")).thenReturn(new Mother("mother id 2", "ec id 2", "thayi card 2"));
         when(allEligibleCouples.findByCaseId("ec id 2")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.startOfCurrentReportMonth(parse("2013-02-01"))).thenReturn(parse("2013-01-26"));
         when(reportMonth.isDateWithinCurrentReportMonth(LocalDate.parse("2013-01-26"))).thenReturn(true);
@@ -1389,9 +1389,9 @@ public class ChildReportingServiceTest {
                 .thenReturn(asList(
                         new Child("child id 1", "mother id 1", "", "5", "male").withThayiCard("thayi card 1").withAnm("ANM X"),
                         new Child("child id 2", "mother id 2", "", "6", "female").withThayiCard("thayi card 2").withAnm("ANM X")));
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
-        when(allMothers.findById("mother id 2")).thenReturn(new Mother("mother id 2", "ec id 2", "thayi card 2"));
+        when(allMothers.findByCaseId("mother id 2")).thenReturn(new Mother("mother id 2", "ec id 2", "thayi card 2"));
         when(allEligibleCouples.findByCaseId("ec id 2")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.startOfCurrentReportMonth(parse("2013-02-01"))).thenReturn(parse("2013-01-26"));
         when(reportMonth.isDateWithinCurrentReportMonth(parse("2013-01-26"))).thenReturn(true);
@@ -1415,9 +1415,9 @@ public class ChildReportingServiceTest {
                 .thenReturn(asList(
                         new Child("child id 1", "mother id 1", "", "5", "male").withThayiCard("thayi card 1").withAnm("ANM X"),
                         new Child("child id 2", "mother id 2", "", "6", "female").withThayiCard("thayi card 2").withAnm("ANM X")));
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
-        when(allMothers.findById("mother id 2")).thenReturn(new Mother("mother id 2", "ec id 2", "thayi card 2"));
+        when(allMothers.findByCaseId("mother id 2")).thenReturn(new Mother("mother id 2", "ec id 2", "thayi card 2"));
         when(allEligibleCouples.findByCaseId("ec id 2")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.startOfCurrentReportMonth(parse("2013-02-01"))).thenReturn(parse("2013-01-26"));
         when(reportMonth.isDateWithinCurrentReportMonth(parse(currentReportMonthStartDate))).thenReturn(true);
@@ -1477,7 +1477,7 @@ public class ChildReportingServiceTest {
         Child child = new Child("child id 1", "mother id 1", "bcg", "3", "female").withThayiCard("thayi card 1").withAnm("ANM X").withDateOfBirth("2012-01-15");
         EligibleCouple ec = new EligibleCouple("ec id 1", "123").withLocation("bherya", "Sub Center", "PHC X").asOutOfArea();
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(ec);
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allChildren.findAllChildrenWhoTurnedOneYearOld(any(LocalDate.class))).thenReturn(asList(child));
         when(reportMonth.startOfCurrentReportMonth(any(LocalDate.class))).thenReturn(parse("2013-01-26"));
         when(reportMonth.endOfCurrentReportMonth(any(LocalDate.class))).thenReturn(parse("2013-02-25"));
@@ -1495,7 +1495,7 @@ public class ChildReportingServiceTest {
         Mother mother = new Mother("mother id 1", "ec id 1", null);
         Child child = new Child("child id 1", "mother id 1", "bcg", "3", "female").withAnm("ANM X").withDateOfBirth("2012-01-15");
         EligibleCouple ec = new EligibleCouple("ec id 1", "123").withLocation("bherya", "Sub Center", "PHC X").asOutOfArea();
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(ec);
         when(allChildren.findAllChildrenWhoTurnedOneYearOld(any(LocalDate.class))).thenReturn(asList(child));
         when(reportMonth.startOfCurrentReportMonth(any(LocalDate.class))).thenReturn(parse("2013-01-26"));
@@ -1516,7 +1516,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findAllChildrenLessThanOneYearOldAsOfDate(today))
                 .thenReturn(asList(
                         new Child("child id 1", "mother id 1", "", "5", "male").withThayiCard("thayi card 1").withAnm("ANM X")));
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.startOfCurrentReportMonth(today)).thenReturn(parse("2013-01-26"));
         when(reportMonth.startOfCurrentReportMonth(parse("2013-01-26"))).thenReturn(parse("2013-01-26"));
@@ -1537,7 +1537,7 @@ public class ChildReportingServiceTest {
         when(allChildren.findAllChildrenLessThanFiveYearOldAsOfDate(today))
                 .thenReturn(asList(
                         new Child("child id 1", "mother id 1", "", "5", "male").withThayiCard("thayi card 1").withAnm("ANM X")));
-        when(allMothers.findById("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(new Mother("mother id 1", "ec id 1", "thayi card 1"));
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.startOfCurrentReportMonth(today)).thenReturn(parse("2013-01-26"));
         when(reportMonth.startOfCurrentReportMonth(parse("2013-01-26"))).thenReturn(parse("2013-01-26"));
@@ -1554,7 +1554,7 @@ public class ChildReportingServiceTest {
         ChildReportingService childReportingService = new ChildReportingService(fakeReportingService, allChildren, allMothers, allEligibleCouples, allInfantBalanceOnHandTokens, reportMonth, mctsReporter);
         SafeMap reportingData = reportDataForImmunization(immunizationProvided, "", "2012-01-01");
         when(allChildren.findByCaseId("CASE X")).thenReturn(CHILD);
-        when(allMothers.findById("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
+        when(allMothers.findByCaseId("MOTHER-CASE-1")).thenReturn(new Mother("MOTHER-CASE-1", "EC-CASE-1", "TC 1"));
         when(allEligibleCouples.findByCaseId("EC-CASE-1")).thenReturn(new EligibleCouple().withLocation("bherya", "Sub Center", "PHC X"));
         when(reportMonth.areDatesBelongToSameReportingMonth(LocalDate.parse("2012-01-01"), LocalDate.parse("2012-01-01"))).thenReturn(true);
 
@@ -1641,7 +1641,7 @@ public class ChildReportingServiceTest {
         Mother mother = new Mother("mother id 1", "ec id 1", "thayi card 1");
         EligibleCouple ec = new EligibleCouple("ec id 1", "123").withLocation("bherya", "Sub Center", "PHC X").asOutOfArea();
         Location location = new Location("bherya", "Sub Center", "PHC X");
-        when(allMothers.findById("mother id 1")).thenReturn(mother);
+        when(allMothers.findByCaseId("mother id 1")).thenReturn(mother);
         when(allEligibleCouples.findByCaseId("ec id 1")).thenReturn(ec);
         when(reportMonth.isDateWithinCurrentReportMonth(LocalDate.parse("2013-01-01"))).thenReturn(true);
 

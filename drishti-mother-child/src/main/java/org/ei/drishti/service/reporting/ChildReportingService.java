@@ -512,7 +512,7 @@ public class ChildReportingService {
     }
 
     private EligibleCouple getEligibleCouple(Child child) {
-        Mother mother = allMothers.findById(child.motherCaseId());
+        Mother mother = allMothers.findByCaseId(child.motherCaseId());
         return allEligibleCouples.findByCaseId(mother.ecCaseId());
     }
 
