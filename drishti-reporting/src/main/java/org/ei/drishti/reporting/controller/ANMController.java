@@ -69,11 +69,25 @@ public class ANMController {
         return new ResponseEntity<>(null, allowOrigin(drishtiSiteUrl), OK);
     }
 
-    @RequestMapping(method = {RequestMethod.GET, RequestMethod.OPTIONS}, value = "/unique-id")
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.OPTIONS}, value = "/unique-ids")
     @ResponseBody
-    public ResponseEntity<List<UniqueIdDTO>> getUniqueId(@RequestParam("anm-id") String anmIdentifier){
+    public ResponseEntity<List<UniqueIdDTO>> getUniqueIds(@RequestParam("anm-id") String anmIdentifier){
         List uniqueIdsforAnm = anmService.getUniqueIdsforAnm(anmIdentifier);
         return new ResponseEntity<List<UniqueIdDTO>>(convertToUniqueIdDTO(uniqueIdsforAnm),
+                allowOrigin("*"),
+                OK);
+    }
+
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.OPTIONS}, value = "/unique-id")
+    @ResponseBody
+    public ResponseEntity<UniqueIdDTO> getUniqueId(@RequestParam("anm-id") String anmIdentifier){
+        List uniqueIdsforAnm = anmService.getUniqueIdsforAnm(anmIdentifier);
+        List<UniqueIdDTO> dtos = convertToUniqueIdDTO(uniqueIdsforAnm);
+        UniqueIdDTO dto = null;
+        if(dtos != null && !dtos.isEmpty()){
+//            dto = dtos.get(dtos.size()-1);
+        }
+        return new ResponseEntity<>(dto,
                 allowOrigin("*"),
                 OK);
     }
