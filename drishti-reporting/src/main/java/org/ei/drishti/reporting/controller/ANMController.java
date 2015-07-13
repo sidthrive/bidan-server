@@ -83,13 +83,13 @@ public class ANMController {
     public ResponseEntity<UniqueIdDTO> getUniqueId(@RequestParam("anm-id") String anmIdentifier){
         List uniqueIdsforAnm = anmService.getUniqueIdsforAnm(anmIdentifier);
         List<UniqueIdDTO> dtos = convertToUniqueIdDTO(uniqueIdsforAnm);
-        UniqueIdDTO dto = null;
+        UniqueIdDTO dto = new UniqueIdDTO();
         if(dtos != null && !dtos.isEmpty()){
-//            dto = dtos.get(dtos.size()-1);
+            dto = dtos.get(dtos.size()-1);
         }
         return new ResponseEntity<>(dto,
                 allowOrigin("*"),
-                OK);
+                 OK);
     }
 
     private List<ANMDTO> convertToDTO(List<SP_ANM> anms) {
