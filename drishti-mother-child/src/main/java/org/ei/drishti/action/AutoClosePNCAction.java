@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Component
 @Qualifier("AutoClosePNCAction")
-public class AutoClosePNCAction implements Action {
+    public class AutoClosePNCAction implements Action {
     PNCService pncService;
 
     @Autowired

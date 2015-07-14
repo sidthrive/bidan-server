@@ -1,7 +1,5 @@
 package org.ei.drishti.dto;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,21 +9,21 @@ import java.util.List;
 public class UniqueIdDTO {
 
 
-    private List<Long> Ids;
+    private List<Long> ids;
 
     public UniqueIdDTO(){
-        this.Ids = new ArrayList<Long>();
+        this.ids = new ArrayList<Long>();
     }
 
     public UniqueIdDTO(List<Long> ids) {
-        this.Ids = ids;
+        this.ids = ids;
     }
 
     public List<Long> getIds() {
-        return Ids;
+        return ids;
     }
 
     public void setIds(List<Long> ids) {
-        Ids = ids;
+        this.ids = ids;
     }
 }
